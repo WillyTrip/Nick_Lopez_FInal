@@ -1,0 +1,62 @@
+#ifdef FINAL_A
+#define FINAL_A
+
+#include <string>
+
+using namespace std;
+
+class RocketShip
+{
+    private:
+    
+        string name_;
+        int fuel_;
+        
+    public:
+    
+        RocketShip()
+            :fuel_(0), name_("")
+            {}
+        
+        void setName(string name);
+        void setFuel(int fuel);
+        
+        int getFuel();
+        string getName();
+};
+
+#endif
+
+#include "rocketship.h"
+
+void RocketShip::setfuel()
+{
+    fuel_ = fuel;
+}
+
+void RocketShip::setName()
+{
+    name_ = name;
+}
+
+int RocketShip::getFuel(int fuel)
+{
+    return fuel_;
+}
+
+string RocketShip::getName(string name)
+{
+    return name_;
+}
+
+runsaturn: rocketship.o saturn.o saturn_test.o
+	g++ -Wall -g -o runsaturn rocketship.o saturn.o saturnTest.o
+
+saturn: saturn.o
+	g++ -Wall -g -c saturn.o
+
+rocketship: rocketship.cpp rocketship.h
+	g++ -Wall -g -c rocketship.cpp
+	
+saturnTest: saturn_test.cpp
+	g++ -Wall -g -c saturn_test.cpp
